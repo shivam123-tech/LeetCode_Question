@@ -9,9 +9,6 @@ class Solution {
             if(sum<0){
                 sum=0;
             }
-            // if(maxSum<sum){
-            //     maxSum=sum;
-            // }
         }
         return maxSum;
     }
