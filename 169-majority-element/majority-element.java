@@ -12,7 +12,9 @@ class Solution {
           if(freq>(nums.length)/2){
                 return ans;
        }
+         
        }
+        
        
        return ans;
     }
