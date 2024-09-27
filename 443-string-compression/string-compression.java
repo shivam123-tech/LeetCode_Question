@@ -1,12 +1,9 @@
 class Solution {
     public int compress(char[] chars) {
         StringBuilder sb = new StringBuilder("");
-        if(chars.length==1){
-            return 1;
-        }
         for(int i=0;i<chars.length;i++){
-            Integer count = 1;
-            while(i<chars.length-1&&chars[i]==chars[i+1]){
+            Integer count=1;
+            while(i<chars.length-1 && chars[i]==chars[i+1]){
                 count++;
                 i++;
             }
@@ -15,10 +12,12 @@ class Solution {
                 sb.append(count.toString());
             }
         }
-        String compresstr = sb.toString();
-        for(int i=0;i<compresstr.length();i++){
-            chars[i] = compresstr.charAt(i);
-        }
-        return compresstr.length();
+          String st= sb.toString();
+          for(int i=0;i<st.length();i++){
+            chars[i]=st.charAt(i);
+          }
+              return st.length();
     }
+
+     
 }
