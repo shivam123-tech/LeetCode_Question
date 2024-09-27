@@ -1,19 +1,19 @@
 class Solution {
     public String firstPalindrome(String[] words) {
+        String s="";
         for(int i=0;i<words.length;i++){
-            if(isPalindrome(words[i])){
-                return words[i];
+            boolean isPalin=true;
+            for(int j=0;j<words[i].length()/2;j++){
+                if(words[i].charAt(j) != words[i].charAt(words[i].length()-j-1)){
+                    isPalin=false;
+                    break;
+                }
+            }
+            if(isPalin){
+                s=words[i];
+                return s;
             }
         }
-           return "";
+        return "";
     }
-        public static boolean isPalindrome(String s){
-           for(int i=0;i<s.length()/2;i++){
-               if(s.charAt(i)!=s.charAt(s.length()-1-i)){
-                   return false;
-               }
-           }
-           return true;
-        }
-     
 }
