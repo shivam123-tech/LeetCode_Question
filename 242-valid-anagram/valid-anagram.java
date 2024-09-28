@@ -1,19 +1,22 @@
-import java.util.*;
 class Solution {
     public boolean isAnagram(String s, String t) {
         if(s.length()!=t.length()){
             return false;
         }
-        char c[] = s.toCharArray();
-        char d[] = t.toCharArray();
-        Arrays.sort(c);
-        Arrays.sort(d);
+        int count[] = new int[26];
+        for(int i=0;i<s.length();i++){
+            char c=s.charAt(i);
+            int frS=c-97;
+            count[frS]++;
 
-
-        for(int i=0;i<c.length;i++){
-           if(c[i]!=d[i]){
-            return false;
-           }
+            char d=t.charAt(i);
+            int frT=d-97;
+            count[frT]--;
+        }
+        for(int i=0;i<26;i++){
+            if(count[i]!=0){
+                return false;
+            }
         }
         return true;
     }
