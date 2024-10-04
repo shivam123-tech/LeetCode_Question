@@ -8,12 +8,12 @@ class Solution {
             x=1/x;
             N=-N;
         }
-        double half=myPow(x,(int)(N/2));
-        double halfSq= half*half;
 
-       if(N%2!=0){
-        halfSq=x*halfSq;
-       }
-       return halfSq;
+        double half=myPow(x,(int)(N/2));
+        double halfSq=half*half;
+        if(N%2!=0){
+            halfSq=x*halfSq;
+        }
+        return halfSq;
     }
 }
