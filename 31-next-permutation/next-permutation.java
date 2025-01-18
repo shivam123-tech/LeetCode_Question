@@ -8,14 +8,13 @@ class Solution {
             }
         }
 
-           if(pivot==-1){
-            
+        if(pivot==-1){
             int i=0;
-            int j = nums.length-1;
+            int j=nums.length-1;
             while(i<j){
                 int temp=nums[i];
                 nums[i]=nums[j];
-                nums[j] = temp;
+                nums[j]=temp;
                 i++;
                 j--;
             }
@@ -24,23 +23,21 @@ class Solution {
 
         for(int i=nums.length-1;i>pivot;i--){
             if(nums[i]>nums[pivot]){
-                int temp=nums[i];
-                nums[i]=nums[pivot];
+                int temp = nums[i];
+                nums[i] = nums[pivot];
                 nums[pivot]=temp;
                 break;
             }
         }
 
-
         int i=pivot+1;
         int j=nums.length-1;
         while(i<j){
-            int temp = nums[i];
-            nums[i]= nums[j];
+            int temp=nums[i];
+            nums[i]=nums[j];
             nums[j]=temp;
             i++;
             j--;
         }
-        
     }
 }
