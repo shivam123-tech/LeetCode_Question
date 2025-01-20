@@ -1,23 +1,21 @@
 class Solution {
-    public int compress(char[] chars) {
-        StringBuilder sb = new StringBuilder("");
-        for(int i=0;i<chars.length;i++){
+    public int compress(char[] c) {
+        StringBuilder sb = new StringBuilder();
+        for(int i=0;i<c.length;i++){
             Integer count=1;
-            while(i<chars.length-1 && chars[i]==chars[i+1]){
+            while(i<c.length-1 && c[i]==c[i+1]){
                 count++;
                 i++;
             }
-            sb.append(chars[i]);
+            sb.append(c[i]);
             if(count>1){
                 sb.append(count.toString());
             }
         }
-          String st= sb.toString();
-          for(int i=0;i<st.length();i++){
-            chars[i]=st.charAt(i);
-          }
-              return st.length();
+        String s=sb.toString();
+        for(int i=0;i<s.length();i++){
+            c[i]=s.charAt(i);
+        }
+        return s.length();
     }
-
-     
 }
