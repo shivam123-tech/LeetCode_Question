@@ -3,11 +3,10 @@ class Solution {
         int pivot=-1;
         for(int i=nums.length-2;i>=0;i--){
             if(nums[i]<nums[i+1]){
-               pivot=i;
-               break;
+                pivot=i;
+                break;
             }
         }
-
         if(pivot==-1){
             int i=0;
             int j=nums.length-1;
@@ -20,24 +19,22 @@ class Solution {
             }
             return ;
         }
-
-        for(int i=nums.length-1;i>pivot;i--){
-            if(nums[i]>nums[pivot]){
-                int temp = nums[i];
-                nums[i] = nums[pivot];
-                nums[pivot]=temp;
-                break;
+            for(int j=nums.length-1;j>pivot;j--){
+                if(nums[j]>nums[pivot]){
+                    int temp=nums[j];
+                    nums[j]=nums[pivot];
+                    nums[pivot]=temp;
+                    break;
+                }
+            }
+            int si=pivot+1;
+            int ei=nums.length-1;
+            while(si<ei){
+                int temp=nums[si];
+                nums[si]=nums[ei];
+                nums[ei]=temp;
+                si++;
+                ei--;
             }
         }
-
-        int i=pivot+1;
-        int j=nums.length-1;
-        while(i<j){
-            int temp=nums[i];
-            nums[i]=nums[j];
-            nums[j]=temp;
-            i++;
-            j--;
-        }
-    }
 }
