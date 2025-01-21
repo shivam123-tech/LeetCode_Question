@@ -4,19 +4,19 @@ class Solution {
         StringBuilder sb = new StringBuilder("");
 
         for(int i=0;i<s.length();i++){
-            char ch=s.charAt(i);
-            if(ch=='('){
+            if(s.charAt(i)=='('){
                 if(st.size()>0){
-                    sb.append(ch);
+                    sb.append(s.charAt(i));
                 }
-                st.push(ch);
-            }else{
+                st.push(s.charAt(i));
+            }
+            else{
                 st.pop();
                 if(st.size()>0){
-                    sb.append(ch);
+                    sb.append(s.charAt(i));
                 }
             }
         }
-      return  sb.toString();
+        return sb.toString();
     }
 }
