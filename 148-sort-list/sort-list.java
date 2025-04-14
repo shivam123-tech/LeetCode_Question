@@ -37,7 +37,7 @@ class Solution {
     }
 
     public ListNode merge(ListNode head1,ListNode head2){
-        ListNode mergeLL = new ListNode(Integer.MIN_VALUE);
+        ListNode mergeLL = new ListNode(-1);
         ListNode temp=mergeLL;
 
         while(head1 != null && head2 != null){
