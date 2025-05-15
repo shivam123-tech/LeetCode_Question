@@ -16,19 +16,18 @@ class Solution {
             temp=temp.next;
             sz++;
         }
-     if(n==sz){
-        head=head.next;
-        return head;
-     }
-        int i=1;
+        if(n==sz){
+            head=head.next;
+            return head;
+        }
+        int find=sz-n-1;
+        int i=0;
         ListNode prev=head;
-        int Find=sz-n;
-        while(i<Find){
+        while(i<find){
             prev=prev.next;
             i++;
         }
         prev.next=prev.next.next;
         return head;
-        
     }
 }
